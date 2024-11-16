@@ -12,7 +12,7 @@ class UserServices {
         if (!isMatch) {
             throw new Error('Password not match');
         }
-        const token = generateToken({ id: user._id , role: user.role });
+        const token = generateToken({ id: user._id , role: user.role, email: user.email, name: user.name });
         return { token, user };
     }
 
